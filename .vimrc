@@ -13,6 +13,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'scrooloose/nerdtree'
 call neobundle#end()
 
 filetype plugin indent on
@@ -25,7 +26,6 @@ let g:solarized_termcolors=256
 syntax enable
 set background=dark
 colorscheme molokai
-
 set backspace=indent,eol,start " insertモード時にbackspaceを有効にする
 set laststatus=2 " ステータスラインを下部に表示
 set title " 下部バーにタイトルを表示
@@ -55,3 +55,6 @@ set scrolloff=5 " スクロール時に余裕を持たせる
 set cursorline " 現在の行をハイライト
 hi clear CursorLine " 行番号のみハイライト
 autocmd BufWritePre * :%s/\s\+$//ge " 保存時に行末の空白を削除
+
+
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
