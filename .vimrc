@@ -14,9 +14,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'Yggdroot/indentLine'
 call neobundle#end()
-
+" 拡張子によって設定を変える場合
 filetype plugin indent on
+
 NeoBundleCheck
 
 " ******************
@@ -46,15 +49,15 @@ set ignorecase " 検索時の英大文字小文字の区別を無視
 set smartcase " 検索時に全て英小文字で入力した場合のみ区別を無視
 set history=2000 " コマンドラインの履歴保存回数
 set expandtab " tabをspaceに変換
-set tabstop=4 " tabの文字幅
-set shiftwidth=4 " 自動で挿入されるインデントのスペース幅
+set tabstop=2 " tabの文字幅
+set shiftwidth=2 " 自動で挿入されるインデントのスペース幅
 set noswapfile " swpファイルを作成しない
 set backup " バックアップファイルを作成
 set backupdir=/tmp " バックアップファイルのパス
 set scrolloff=5 " スクロール時に余裕を持たせる
 set cursorline " 現在の行をハイライト
 hi clear CursorLine " 行番号のみハイライト
-autocmd BufWritePre * :%s/\s\+$//ge " 保存時に行末の空白を削除
 
+autocmd BufWritePre * :%s/\s\+$//ge " 保存時に行末の空白を削除
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
